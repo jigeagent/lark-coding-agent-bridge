@@ -226,7 +226,7 @@ export async function startChannel(deps: StartChannelDeps): Promise<BridgeChanne
     wsConfig: {
       // 3s liveness watchdog: if no inbound message arrives within 3s after
       // the last ping, SDK presumes connection dead and forces a reconnect.
-      pingTimeout: 3,
+      pingTimeout: 30,
     },
     // 8s handshake timeout (replaces hardcoded 15s). Fast-fail + fast-retry
     // beats slow-fail in unstable networks.
